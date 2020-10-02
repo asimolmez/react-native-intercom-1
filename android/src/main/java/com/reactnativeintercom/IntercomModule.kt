@@ -26,7 +26,7 @@ class RNNIntercomModule(reactContext: ReactApplicationContext) : ReactContextBas
 
     @ReactMethod
     fun registerUser(email: String, promise: Promise) {
-      Intercom.client().registerIdentifiedUser(Registration.create().withEmail(email))
+      Intercom.client().registerIdentifiedUser(Registration.create().withUserId(email))
       promise.resolve(null)
     }
 
